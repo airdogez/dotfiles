@@ -1,3 +1,11 @@
+lvim.colorscheme = "tokyonight"
+lvim.format_on_save = false
+lvim.transparent_window = true
+lvim.log.level = "warn"
+
+require("user.keys").config()
+require("user.plugins").config()
+
 -- Enable powershell as your default shell
 vim.opt.shell = "pwsh.exe -NoLogo"
 vim.opt.shellcmdflag =
@@ -24,11 +32,8 @@ vim.o.guifont = "FuraCode NF Retina"
 
 -- general
 
-lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight"
-lvim.transparent_window = true
 vim.cmd("let g:sonokai_style = 'andromeda'")
 vim.cmd("let g:sonokai_enable_italic_comment = 1")
 vim.opt.shiftwidth = 4
@@ -36,7 +41,6 @@ vim.opt.shiftwidth = 4
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<esc>"] = ":nohlsearch<cr>"
@@ -82,6 +86,10 @@ lvim.builtin.dap.active = true
 lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
 
 
+lvim.builtin.project.patterns = {
+    ".obsidian"
+}
+
 -- nvim-tree has some performance issues on windows, see kyazdani42/nvim-tree.lua#549
 lvim.builtin.nvimtree.setup.diagnostics.enable = false
 lvim.builtin.nvimtree.setup.filters.dotfiles = true
@@ -105,6 +113,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true
 lvim.builtin.treesitter.playground.enable = true
+
 
 -- generic LSP settings
 
@@ -138,6 +147,9 @@ local markdown_opts = {
     autostart = true
 }
 require("lvim.lsp.manager").setup("marksman", markdown_opts)
+
+
+require("user.plugins").config()
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
@@ -189,72 +201,6 @@ require("lvim.lsp.manager").setup("marksman", markdown_opts)
 --   },
 -- }
 
--- additional plugins
-lvim.plugins =
-{
-    -- { 'mhartington/formatter.nvim' },
-    -- { "folke/tokyonight.nvim" },
-    -- {
-    --    "folke/trouble.nvim",
-    --    cmd = "TroubleToggle",
-    --},
-    {
-        "ixru/nvim-markdown",
-        config = function()
-            vim.g.vim_markdown_marh = 1
-            vim.g.vim_markdown_frontmatter = 1
-            vim.g.vim_markdown_conceal = 2
-        end
-    },
-    {
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        ft = "markdown",
-        config = function()
-            vim.g.mkdp_auto_start = 1
-        end,
-    },
-    -- { "rafi/awesome-vim-colorschemes" },
-    {
-        -- Plugin for quickly changing parenthesis, brackets and others
-        "tpope/vim-surround",
-        keys = { "c", "d", "y" }
-    },
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup({ "*" }, {
-                RGB = true, -- #RGB hex codes
-                RRGGBB = true, -- #RRGGBB hex codes
-                RRGGBBAA = true, -- #RRGGBBAA hex codes
-                rgb_fn = true, -- CSS rgb() and rgba() functions
-                hsl_fn = true, -- CSS hsl() and hsla() functions
-                css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-                css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-            })
-        end,
-    },
-    -- {
-    --     "folke/zen-mode.nvim",
-    --     config = function()
-    --         require("zen-mode").setup {
-    --             window = {
-    --                 options = {
-    --                     relativenumber = false
-    --                 }
-    --             }
-    --         }
-    --     end
-    -- },
-    -- {
-    --     "folke/twilight.nvim",
-    --     config = function()
-    --         require("twilight").setup {
-    --         }
-    --     end
-    -- }
-}
-
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --     pattern = { "*.md" },
@@ -290,7 +236,3 @@ lvim.plugins =
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
-
-lvim.builtin.project.patterns = {
-    ".obsidian"
-}
