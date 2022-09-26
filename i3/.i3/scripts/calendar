@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+  3) gsimplecal ;;
+esac
+
+date "+%Y<span color='#586e75'>年</span>%m<span color='#586e75'>月</span>%d<span color='#586e75'>日</span>"
