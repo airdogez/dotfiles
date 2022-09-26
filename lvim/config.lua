@@ -1,7 +1,10 @@
+--general
 lvim.colorscheme = "tokyonight"
-lvim.format_on_save = false
+lvim.format_on_save = true
+lvim.lint_on_save = true
 lvim.transparent_window = true
 lvim.log.level = "warn"
+-- vim.opt.shiftwidth = 4
 
 require("user.keys").config()
 require("user.plugins").config()
@@ -33,26 +36,6 @@ end
 if vim.fn.exists("g:neovide") then
     vim.o.guifont = "FuraCode NF Retina"
 end
-
-
--- general
-
-lvim.format_on_save = true
-lvim.lint_on_save = true
-vim.cmd("let g:sonokai_style = 'andromeda'")
-vim.cmd("let g:sonokai_enable_italic_comment = 1")
-vim.opt.shiftwidth = 4
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
-
--- keymappings [view all the defaults by pressing <leader>Lk]
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<esc>"] = ":nohlsearch<cr>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -90,7 +73,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
 
-
 lvim.builtin.project.patterns = {
     ".obsidian"
 }
@@ -118,7 +100,6 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true
 lvim.builtin.treesitter.playground.enable = true
-
 
 -- generic LSP settings
 
@@ -152,9 +133,6 @@ local markdown_opts = {
     autostart = true
 }
 require("lvim.lsp.manager").setup("marksman", markdown_opts)
-
-
-require("user.plugins").config()
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
