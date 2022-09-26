@@ -84,9 +84,9 @@ lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
 
 -- nvim-tree has some performance issues on windows, see kyazdani42/nvim-tree.lua#549
 lvim.builtin.nvimtree.setup.diagnostics.enable = false
-lvim.builtin.nvimtree.setup.filters.dotfiles = false
+lvim.builtin.nvimtree.setup.filters.dotfiles = true
 lvim.builtin.nvimtree.setup.filters.custom = {}
-lvim.builtin.nvimtree.setup.git.enable = false
+lvim.builtin.nvimtree.setup.git.enable = true
 lvim.builtin.nvimtree.setup.update_cwd = false
 lvim.builtin.nvimtree.setup.update_focused_file.update_cwd = false
 lvim.builtin.nvimtree.setup.view.side = "left"

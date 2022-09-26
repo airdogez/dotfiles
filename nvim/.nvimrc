@@ -4,10 +4,10 @@ if has('vim_starting')
     set nocompatible
   endif
 
-  set runtimepath+=/home/aqws3/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('/home/aqws3/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 "Plugin Bundler
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -739,7 +739,6 @@ let g:startify_custom_header = [
             \ ]
 let g:startify_custom_footer = [
       \ ' ',
-      \ '~~~By Aqws3',
       \ ]
 "}}}
 "}}}

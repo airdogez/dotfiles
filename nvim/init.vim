@@ -706,8 +706,8 @@ endif
 let g:unite_source_rec_max_cache_files = 99999
 let g:unite_source_session_path = '~/vimfiles/session'
 """Bibtex
-let g:unite_bibtex_bib_files = ['/home/aqws3/Sync/Papers/library.bib']
-let g:unite_bibtex_cache_dir = '/home/aqws3/tmp'
+let g:unite_bibtex_bib_files = ['~/Sync/Papers/library.bib']
+let g:unite_bibtex_cache_dir = '~/tmp'
 "}}}
 "Vimfiler {{{
 nnoremap <F2> :<C-u>VimFilerExplorer<CR>
@@ -800,7 +800,6 @@ let g:startify_custom_header = [
             \ ]
 let g:startify_custom_footer = [
       \ ' ',
-      \ '~~~By Aqws3',
       \ ]
 "}}}
 "Webdev Icons {{{
