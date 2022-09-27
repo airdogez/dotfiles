@@ -5,7 +5,6 @@ M.config = function()
   if not status_ok then
     return
   end
-
   neoclip.setup {
     history = 100,
     enable_persistent_history = lvim.custom.neoclip.enable_persistent_history,

@@ -73,15 +73,15 @@ M.config = function()
       end
     },
     --WARN:Neoclip Not working correctly
-    -- {
-    --   "AckslD/nvim-neoclip.lua",
-    --   config = function()
-    --     require("user.neoclip").config()
-    --   end,
-    --   keys = "<leader>y",
-    --   requires = neoclip_req,
-    --   disable = not lvim.custom.neoclip.active,
-    -- },
+    {
+      "AckslD/nvim-neoclip.lua",
+      config = function()
+        require("user.neoclip").config()
+      end,
+      keys = "<leader>y",
+      requires = neoclip_req,
+      disable = not lvim.custom.neoclip.active,
+    },
     -- {
     --     "folke/twilight.nvim",
     --     config = function()

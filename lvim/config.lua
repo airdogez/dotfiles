@@ -51,6 +51,7 @@ lvim.custom = {
   neoclip = { active = true, enable_persistent_history = true },
 }
 
+
 -- Plugins
 require("user.plugins").config()
 
@@ -93,5 +94,9 @@ lvim.lsp.installer.setup.ensure_installed = {
   "marksman",
   "clangd",
 }
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "neoclip")
+end
 
 require("user.keys").config()
