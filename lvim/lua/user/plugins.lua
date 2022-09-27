@@ -89,6 +89,10 @@ M.config = function()
     --         }
     --     end
     -- }
+    {
+      "folke/trouble.nvim",
+      com = "TroubleToggle",
+    },
   }
 end
 

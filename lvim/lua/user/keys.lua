@@ -1,6 +1,7 @@
 local M = {}
 
 
+-- General Keybindings
 M.show_documentation = function()
   local filetype = vim.bo.filetype
   if vim.tbl_contains({ "vim", "help" }, filetype) then
@@ -23,6 +24,19 @@ M.config = function()
   lvim.keys.normal_mode["<TAB>"] = "<cmd>lua vim.lsp.buf.signature_help()<CR>"
   lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
   lvim.keys.normal_mode["<ESC><ESC>"] = ":nohlsearch<cr>"
+
+  local status_ok, _ = pcall(require, "trouble")
+  if status_ok then
+    lvim.builtin.which_key.mappings["t"] = {
+      name = "Diagnostics",
+      t = { "<cmd>TroubleToggle<cr>", "trouble" },
+      w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+      d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+      q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+      l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+      r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+    }
+  end
 
   vim.api.nvim_set_keymap("n", "K", ":lua require('user.keys').show_documentation()<CR>", opts)
 end
