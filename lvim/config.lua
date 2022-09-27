@@ -9,32 +9,36 @@ lvim.log.level = "warn"
 require("user.keys").config()
 require("user.plugins").config()
 
+if lvim.builtin.dap.active then
+  require("user.dap").config()
+end
+
 if vim.fn.has('windows') then
-    -- Enable powershell as your default shell
-    vim.opt.shell = "pwsh.exe -NoLogo"
-    vim.opt.shellcmdflag =
-    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    vim.cmd [[
+  -- Enable powershell as your default shell
+  vim.opt.shell = "pwsh.exe -NoLogo"
+  vim.opt.shellcmdflag =
+  "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  vim.cmd [[
     let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
     let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
     set shellquote= shellxquote=
   ]]
 
-    -- Set a compatible clipboard manager
-    vim.g.clipboard = {
-        copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
-        },
-    }
+  -- Set a compatible clipboard manager
+  vim.g.clipboard = {
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+  }
 end
 
 if vim.fn.exists("g:neovide") then
-    vim.o.guifont = "FuraCode NF Retina"
+  vim.o.guifont = "FuraCode NF Retina"
 end
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
@@ -74,7 +78,7 @@ lvim.builtin.dap.active = true
 lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
 
 lvim.builtin.project.patterns = {
-    ".obsidian"
+  ".obsidian"
 }
 
 -- nvim-tree has some performance issues on windows, see kyazdani42/nvim-tree.lua#549
@@ -90,10 +94,10 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-    "c",
-    "lua",
-    "python",
-    "markdown",
+  "c",
+  "lua",
+  "python",
+  "markdown",
 }
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -105,10 +109,10 @@ lvim.builtin.treesitter.playground.enable = true
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-    "sumeko_lua",
-    "jsonls",
-    "marksman",
-    "clangd",
+  "sumeko_lua",
+  "jsonls",
+  "marksman",
+  "clangd",
 }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
@@ -129,8 +133,8 @@ lvim.lsp.installer.setup.ensure_installed = {
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
 local markdown_opts = {
-    filetypes = { "markdown" },
-    autostart = true
+  filetypes = { "markdown" },
+  autostart = true
 }
 require("lvim.lsp.manager").setup("marksman", markdown_opts)
 
