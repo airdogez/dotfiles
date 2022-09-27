@@ -36,6 +36,12 @@ M.config = function()
       keys = { "c", "d", "y" }
     },
     {
+      "folke/todo-comments.nvim",
+      config = function()
+        require("user.todo-comments").config()
+      end
+    },
+    {
       "norcalli/nvim-colorizer.lua",
       config = function()
         require("colorizer").setup({ "*" }, {
