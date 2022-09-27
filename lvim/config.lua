@@ -1,6 +1,4 @@
---general
-lvim.colorscheme = "tokyonight"
-lvim.format_on_save = true
+--general lvim.colorscheme = "tokyonight" lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.transparent_window = true
 lvim.log.level = "warn"
@@ -87,11 +85,4 @@ lvim.lsp.installer.setup.ensure_installed = {
   "marksman",
   "clangd",
 }
-
-local markdown_opts = {
-  filetypes = { "markdown" },
-  autostart = true
-}
-require("lvim.lsp.manager").setup("marksman", markdown_opts)
-
 require("user.keys").config()
