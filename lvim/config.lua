@@ -4,7 +4,7 @@ lvim.transparent_window = true
 lvim.log.level = "warn"
 -- vim.opt.shiftwidth = 4
 
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+-- Built-int Configuration
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
@@ -44,6 +44,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true
 lvim.builtin.treesitter.playground.enable = true
 
+
+-- Customization
+-- Table with custom parameters
+lvim.custom = {
+  neoclip = { active = true, enable_persistent_history = true },
+}
+
+-- Plugins
 require("user.plugins").config()
 
 -- Windows Config
@@ -85,4 +93,5 @@ lvim.lsp.installer.setup.ensure_installed = {
   "marksman",
   "clangd",
 }
+
 require("user.keys").config()

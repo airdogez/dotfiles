@@ -1,6 +1,10 @@
 local M = {}
 
 M.config = function()
+  local neoclip_req = { "kkharji/sqlite.lua", module = "sqlite" }
+  if lvim.custom.neoclip.enable_persistent_history == false then
+    neoclip_req = {}
+  end
   lvim.plugins = {
     {
       "rcarriga/nvim-dap-ui",
@@ -12,7 +16,8 @@ M.config = function()
       "karb94/neoscroll.nvim",
       config = function()
         require("user.neoscroll").config()
-      end
+      end,
+      event = "BufRead",
     },
     {
       "ixru/nvim-markdown",
@@ -67,6 +72,16 @@ M.config = function()
         require("user.cybu").config()
       end
     },
+    --WARN:Neoclip Not working correctly
+    -- {
+    --   "AckslD/nvim-neoclip.lua",
+    --   config = function()
+    --     require("user.neoclip").config()
+    --   end,
+    --   keys = "<leader>y",
+    --   requires = neoclip_req,
+    --   disable = not lvim.custom.neoclip.active,
+    -- },
     -- {
     --     "folke/twilight.nvim",
     --     config = function()
