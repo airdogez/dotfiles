@@ -111,17 +111,20 @@ M.config = function()
       event = "BufReadPre", -- this will only start session saving when an actual file was opened
       module = "persistence",
       config = function()
-        require("persistence").setup {
-          dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-          options = { "buffers", "curdir", "tabpages", "winsize" },
-        }
-      end,
+        require("user.persistence").config()
+      end
     },
     { "moll/vim-bbye" },
     {
       "j-hui/fidget.nvim",
       config = function()
         require("user.fidget_spinner").config()
+      end,
+    },
+    {
+      "MattesGroeger/vim-bookmarks",
+      config = function()
+        require("user.bookmark").config()
       end,
     },
   }
