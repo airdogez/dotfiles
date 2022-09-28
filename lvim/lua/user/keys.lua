@@ -25,8 +25,14 @@ M.config = function()
   lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
   lvim.keys.normal_mode["<ESC><ESC>"] = ":nohlsearch<cr>"
 
-  local status_ok, _ = pcall(require, "trouble")
-  if status_ok then
+
+  vim.api.nvim_set_keymap("n", "K", ":lua require('user.keys').show_documentation()<CR>", opts)
+
+  vim.keymap.set("n", "Q", "<cmd>Bdelete!<CR>", opts)
+
+  -- WhichKey binds
+  local trouble_status_ok, _ = pcall(require, "trouble")
+  if trouble_status_ok then
     lvim.builtin.which_key.mappings["t"] = {
       name = "Diagnostics",
       t = { "<cmd>TroubleToggle<cr>", "trouble" },
@@ -38,7 +44,15 @@ M.config = function()
     }
   end
 
-  vim.api.nvim_set_keymap("n", "K", ":lua require('user.keys').show_documentation()<CR>", opts)
+  local persistence_status_ok, _ = pcall(require, "persistence")
+  if persistence_status_ok then
+    lvim.builtin.which_key.mappings["S"] = {
+      name = "Session",
+      c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+      l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
+      Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+    }
+  end
 end
 
 
