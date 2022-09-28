@@ -127,6 +127,12 @@ M.config = function()
         require("user.bookmark").config()
       end,
     },
+    {
+      "ggandor/leap.nvim",
+      config = function()
+        require("leap").set_default_keymaps()
+      end,
+    }
   }
 end
 
