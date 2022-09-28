@@ -78,6 +78,7 @@ if vim.fn.has('windows') then
       ["*"] = "win32yank.exe -o --lf",
     },
   }
+  vim.keymap.set("n", "<C-z>", "<Nop>", {})
 end
 
 -- GUI Config
