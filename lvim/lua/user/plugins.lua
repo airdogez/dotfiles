@@ -72,7 +72,6 @@ M.config = function()
         require("user.cybu").config()
       end
     },
-    --WARN:Neoclip Not working correctly
     {
       "AckslD/nvim-neoclip.lua",
       config = function()
@@ -82,13 +81,6 @@ M.config = function()
       requires = neoclip_req,
       disable = not lvim.custom.neoclip.active,
     },
-    -- {
-    --     "folke/twilight.nvim",
-    --     config = function()
-    --         require("twilight").setup {
-    --         }
-    --     end
-    -- }
     {
       "folke/trouble.nvim",
       com = "TroubleToggle",
