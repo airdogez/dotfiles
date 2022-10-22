@@ -1,0 +1,10 @@
+{
+  "promoAwesomeStyler": false,
+  "featureFaviconsEnabled": true,
+  "featurePageIconsEnabled": true,
+  "featureInheritPageIcons": "page-type",
+  "featureHierarchyPageIcons": true,
+  "featureJournalIcon": "",
+  "featureNerdFontEnabled": true,
+  "disabled": true
+}

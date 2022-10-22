@@ -6,12 +6,12 @@ M.config = function()
     neoclip_req = {}
   end
   lvim.plugins = {
-    {
-      "rcarriga/nvim-dap-ui",
-      config = function()
-        require("user.dap-ui").config()
-      end
-    },
+    -- {
+    --   "rcarriga/nvim-dap-ui",
+    --   config = function()
+    --     require("user.dap-ui").config()
+    --   end
+    -- },
     {
       "karb94/neoscroll.nvim",
       config = function()

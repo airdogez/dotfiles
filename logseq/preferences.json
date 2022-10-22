@@ -1,0 +1,35 @@
+{
+  "theme": {
+    "name": "Dev theme",
+    "url": "assets://C:\\Users\\arevo\\.logseq\\plugins\\logseq-dev-theme\\custom.css",
+    "pid": "logseq-dev-theme"
+  },
+  "themes": {
+    "mode": "dark",
+    "light": {
+      "name": "Bonofix Theme",
+      "url": "assets://C:\\Users\\arevo\\.logseq\\plugins\\logseq-bonofix-theme\\custom.css",
+      "description": "A custom theme focus on UI bug fix and mobile improvement",
+      "pid": "logseq-bonofix-theme",
+      "group-first": true,
+      "group-desc": "light & dark themes",
+      "mode": "light",
+      "selected": false
+    },
+    "dark": {
+      "name": "Tokyo",
+      "url": "assets://C:\\Users\\arevo\\.logseq\\plugins\\logseq-tokyo-theme\\tokyo.css",
+      "description": "Tokyo night",
+      "mode": "dark",
+      "pid": "logseq-tokyo-theme",
+      "selected": false
+    }
+  },
+  "externals": [],
+  "pinnedToolbarItems": [
+    "logseq-journals-calendar:goto-today",
+    "logseq-todo-plugin:logseq-plugin-todo",
+    "logseq-journals-calendar:open-calendar",
+    "logseq-tags:tags-plugin-open"
+  ]
+}
