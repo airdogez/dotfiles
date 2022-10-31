@@ -8,5 +8,3 @@
 ;;  would result in the final config:
 ;;   {:shortcuts {:ui/toggle-theme "t z"
 ;;                :ui/toggle-brackets "t b"}}
-
-{}

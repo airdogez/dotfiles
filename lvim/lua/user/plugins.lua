@@ -124,7 +124,7 @@ M.config = function()
       config = function()
         require("leap").set_default_keymaps()
       end,
-    }
+    },
   }
 end
 

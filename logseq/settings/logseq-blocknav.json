@@ -1,0 +1,45 @@
+{
+  "default-shortcuts": true,
+  "custom-shortcuts": [
+    {
+      "idx": -1,
+      "new": true,
+      "bind": "b b",
+      "disabled": true,
+      "desc": "Append and edit"
+    },
+    {
+      "idx": 0,
+      "new": true,
+      "bind": "b p",
+      "disabled": true,
+      "desc": "Prepend and edit"
+    },
+    {
+      "idx": 0,
+      "bind": "b 1",
+      "disabled": true,
+      "desc": "Edit block 1"
+    },
+    {
+      "idx": -1,
+      "bind": "b l",
+      "disabled": true,
+      "desc": "Edit last block"
+    },
+    {
+      "idx": -2,
+      "bind": "b L",
+      "disabled": true,
+      "desc": "Edit penultimate block"
+    },
+    {
+      "idx": 0,
+      "bind": "b f",
+      "disabled": true,
+      "onlySelect": true,
+      "desc": "Experimental option to select the block without editing. May not work reliably."
+    }
+  ],
+  "disabled": true
+}

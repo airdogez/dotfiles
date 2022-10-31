@@ -8,7 +8,7 @@
     "mode": "dark",
     "light": {
       "name": "Bonofix Theme",
-      "url": "assets://C:\\Users\\arevo\\.logseq\\plugins\\logseq-bonofix-theme\\custom.css",
+      "url": "assets://C:\\Users\\Andres\\.logseq\\plugins\\logseq-bonofix-theme\\custom.css",
       "description": "A custom theme focus on UI bug fix and mobile improvement",
       "pid": "logseq-bonofix-theme",
       "group-first": true,
@@ -30,6 +30,8 @@
     "logseq-journals-calendar:goto-today",
     "logseq-todo-plugin:logseq-plugin-todo",
     "logseq-journals-calendar:open-calendar",
-    "logseq-tags:tags-plugin-open"
+    "logseq-tags:tags-plugin-open",
+    "logseq-agenda:logseq-plugin-agenda",
+    "logseq-my-highlights:my-highlights-open"
   ]
 }
