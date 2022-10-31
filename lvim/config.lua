@@ -11,6 +11,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true
 
+
 if lvim.builtin.dap.active then
   require("user.dap").config()
 end
@@ -20,9 +21,13 @@ lvim.builtin.project.patterns = {
 }
 
 lvim.builtin.indentlines.options = {
+  show_trailing_blankline_inden = false,
+  show_first_indent_level = false,
   space_char_blankline = " ",
   show_current_context = true,
   show_current_context_start = true,
+  use_treesiter = true,
+  show_foldtext = true,
 }
 
 -- Windows Config
