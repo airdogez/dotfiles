@@ -38,20 +38,17 @@ end
 -- GUI Config
 if vim.fn.exists("g:neovide") then
   vim.o.guifont = "FuraCode NF Retina"
-  lvim.transparent_window = true
+  lvim.transparent_window = false
 end
 
 -- Treesitter
-
-require 'nvim-treesitter.install'.compilers = { "clang" }
 lvim.builtin.treesitter.ensure_installed = {
   "c",
   "cpp",
   "lua",
   "python",
   "markdown",
-  "yaml",
-  "norg",
+  "yaml"
 }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true

@@ -125,6 +125,22 @@ M.config = function()
         require("leap").set_default_keymaps()
       end,
     },
+    {
+      "nvim-neorg/neorg",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neorg/neorg-telescope",
+        "esquires/neorg-gtd-project-tags",
+        "max397574/neorg-contexts",
+        "max397574/neorg-kanban",
+      },
+      run = ":Neorg sync-parsers",
+      ft = "norg",
+      after = "nvim-treesitter",
+      config = function()
+        require("user.neorg").config()
+      end,
+    },
   }
 end
 
