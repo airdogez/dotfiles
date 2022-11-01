@@ -1,11 +1,11 @@
---general
+-- General
 lvim.colorscheme = "tokyonight"
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.transparent_window = true
 lvim.log.level = "warn"
 
--- Built-int Configuration
+-- LVim Built-in Configuration
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
@@ -21,7 +21,7 @@ lvim.builtin.project.patterns = {
 }
 
 lvim.builtin.indentlines.options = {
-  show_trailing_blankline_inden = false,
+  show_trailing_blankline_indent = false,
   show_first_indent_level = false,
   space_char_blankline = " ",
   show_current_context = true,
@@ -35,8 +35,13 @@ if vim.fn.has('windows') then
   require "user.windows"
 end
 
+-- GUI Config
+if vim.fn.exists("g:neovide") then
+  vim.o.guifont = "FuraCode NF Retina"
+  lvim.transparent_window = false
+end
 
--- if you don't want all the parsers change this to a table of the ones you want
+-- Treesitter
 lvim.builtin.treesitter.ensure_installed = {
   "c",
   "cpp",
@@ -45,27 +50,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "markdown",
   "yaml"
 }
-
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true
 lvim.builtin.treesitter.playground.enable = true
 
--- Customization
--- Table with custom parameter for plugins
-lvim.custom = {
-  neoclip = { active = true, enable_persistent_history = true },
-}
--- Plugins
-require("user.plugins").config()
-
-
--- GUI Config
-if vim.fn.exists("g:neovide") then
-  vim.o.guifont = "FuraCode NF Retina"
-end
-
--- generic LSP settings
-
+-- LSP settings
 lvim.lsp.installer.setup.ensure_installed = {
   "sumeko_lua",
   "jsonls",
@@ -73,8 +62,18 @@ lvim.lsp.installer.setup.ensure_installed = {
   "clangd",
 }
 
+-- Telescope
 lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "neoclip")
 end
 
+-- Custom variables
+lvim.custom = {
+  neoclip = { active = true, enable_persistent_history = true },
+}
+-- Plugins
+require("user.plugins").config()
+
+
+-- Keybinds
 require("user.keys").config()
