@@ -1,5 +1,6 @@
 -- General
-lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "kanagawa"
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.transparent_window = true
@@ -74,9 +75,6 @@ end
 lvim.custom = {
   neoclip = { active = true, enable_persistent_history = true },
 }
--- Plugins
+
 require("user.plugins").config()
-
-
--- Keybinds
 require("user.keys").config()

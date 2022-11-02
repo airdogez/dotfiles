@@ -13,6 +13,9 @@ M.config = function()
     --   end
     -- },
     {
+      "rebelot/kanagawa.nvim",
+    },
+    {
       "karb94/neoscroll.nvim",
       config = function()
         require("user.neoscroll").config()
@@ -135,11 +138,31 @@ M.config = function()
         "max397574/neorg-kanban",
       },
       run = ":Neorg sync-parsers",
-      ft = "norg",
       after = "nvim-treesitter",
       config = function()
         require("user.neorg").config()
       end,
+    },
+    {
+      "romgrk/nvim-treesitter-context",
+      config = function()
+        require("treesitter-context").setup {
+          enable = true,
+          throttle = true,
+          max_lines = 0,
+          patterns = {
+            default = {
+              'class',
+              'function',
+              'method',
+            },
+          },
+        }
+      end
+    },
+    {
+      "nvim-treesitter/playground",
+      event = "BufRead",
     },
   }
 end

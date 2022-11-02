@@ -16,7 +16,11 @@ M.config = function()
           }
         }
       },
-      ["core.gtd.base"] = {},
+      ["core.gtd.base"] = {
+        config = {
+          workspace = "org",
+        },
+      },
       ["core.norg.completion"] = {},
       ["core.norg.concealer"] = {},
       ["core.norg.journal"] = {},
