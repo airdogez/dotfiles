@@ -1,6 +1,7 @@
 -- General
--- lvim.colorscheme = "tokyonight"
-lvim.colorscheme = "kanagawa"
+--lvim.colorscheme = "tokyonight"
+--lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "catppuccin"
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.transparent_window = true
@@ -18,17 +19,17 @@ if lvim.builtin.dap.active then
 end
 
 lvim.builtin.project.patterns = {
-  ".obsidian"
+    ".obsidian"
 }
 
 lvim.builtin.indentlines.options = {
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-  use_treesiter = true,
-  show_foldtext = true,
+    show_trailing_blankline_indent = false,
+    show_first_indent_level = false,
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+    use_treesiter = true,
+    show_foldtext = true,
 }
 
 -- Windows Config
@@ -46,13 +47,13 @@ end
 
 require 'nvim-treesitter.install'.compilers = { "clang" }
 lvim.builtin.treesitter.ensure_installed = {
-  "c",
-  "cpp",
-  "lua",
-  "python",
-  "markdown",
-  "yaml",
-  "norg",
+    "c",
+    "cpp",
+    "lua",
+    "python",
+    "markdown",
+    "yaml",
+    "norg",
 }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.indent.enable = true
@@ -60,10 +61,10 @@ lvim.builtin.treesitter.playground.enable = true
 
 -- LSP settings
 lvim.lsp.installer.setup.ensure_installed = {
-  "sumeko_lua",
-  "jsonls",
-  "marksman",
-  "clangd",
+    "sumeko_lua",
+    "jsonls",
+    "marksman",
+    "clangd",
 }
 
 -- Telescope
@@ -73,7 +74,7 @@ end
 
 -- Custom variables
 lvim.custom = {
-  neoclip = { active = true, enable_persistent_history = true },
+    neoclip = { active = true, enable_persistent_history = true },
 }
 
 require("user.plugins").config()

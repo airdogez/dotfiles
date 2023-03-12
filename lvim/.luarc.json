@@ -1,0 +1,11 @@
+{
+    "workspace.library": [
+        "C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime",
+        "C:\\Users\\arevo\\AppData\\Roaming\\lunarvim\\lvim",
+        "C:\\Users\\arevo\\AppData\\Roaming\\lunarvim\\site\\pack\\packer\\opt\\neodev.nvim\\types\\stable",
+        "C:\\Users\\arevo\\AppData\\Roaming\\lunarvim\\site\\pack\\packer\\start\\LuaSnip/lua",
+        "C:\\Users\\arevo\\AppData\\Roaming\\lunarvim\\site\\pack\\packer\\start\\plenary.nvim/lua",
+        "C:\\Users\\arevo\\AppData\\Roaming\\lunarvim\\site\\pack\\packer\\start\\telescope.nvim/lua",
+        "${3rd}/luassert/library"
+    ]
+}
