@@ -6,210 +6,180 @@ M.config = function()
     neoclip_req = {}
   end
   lvim.plugins = {
-      -- {
-      --   "rcarriga/nvim-dap-ui",
-      --   config = function()
-      --     require("user.dap-ui").config()
-      --   end
-      -- },
-      {
-          "rebelot/kanagawa.nvim",
-      },
-      {
-          "catppuccin/nvim",
-          as = "catppuccin",
-          -- config = function()
-          --   require("catppuccin").setup({
-          --       flavour = "mocha",
-          --       term_colors = false,
-          --   })
-          -- end
-      },
-      {
-          "karb94/neoscroll.nvim",
-          config = function()
-            require("user.neoscroll").config()
-          end,
-          event = "BufRead",
-      },
-      {
-          "ixru/nvim-markdown",
-          config = function()
-            vim.g.vim_markdown_marh = 1
-            vim.g.vim_markdown_frontmatter = 1
-            vim.g.vim_markdown_conceal = 2
-          end
-      },
-      {
-          "iamcco/markdown-preview.nvim",
-          run = "cd app && npm install",
-          ft = "markdown",
-          config = function()
-            vim.g.mkdp_auto_start = 1
-          end,
-      },
-      {
-          -- Plugin for quickly changing parenthesis, brackets and others
-          "tpope/vim-surround",
-          keys = { "c", "d", "y" }
-      },
-      {
-          "folke/todo-comments.nvim",
-          config = function()
-            require("user.todo-comments").config()
-          end
-      },
-      {
-          "norcalli/nvim-colorizer.lua",
-          config = function()
-            require("colorizer").setup({ "*" }, {
-                RGB = true, -- #RGB hex codes
-                RRGGBB = true, -- #RRGGBB hex codes
-                RRGGBBAA = true, -- #RRGGBBAA hex codes
-                rgb_fn = true, -- CSS rgb() and rgba() functions
-                hsl_fn = true, -- CSS hsl() and hsla() functions
-                css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-                css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-            })
-          end,
-      },
-      {
-          "folke/zen-mode.nvim",
-          config = function()
-            require("user.zen").config()
-          end
-      },
-      {
-          "ghillb/cybu.nvim",
-          config = function()
-            require("user.cybu").config()
-          end
-      },
-      {
-          "AckslD/nvim-neoclip.lua",
-          config = function()
-            require("user.neoclip").config()
-          end,
-          keys = "<leader>y",
-          requires = neoclip_req,
-          disable = not lvim.custom.neoclip.active,
-      },
-      {
-          "folke/trouble.nvim",
-          com = "TroubleToggle",
-      },
-      {
-          "ethanholz/nvim-lastplace",
-          event = "BufRead",
-          config = function()
-            require("nvim-lastplace").setup({
-                lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-                lastplace_ignore_filetype = {
-                    "gitcommit", "gitrebase", "svn", "hgcommit",
-                },
-                lastplace_open_folds = true,
-            })
-          end,
-      },
-      {
-          "folke/persistence.nvim",
-          event = "BufReadPre", -- this will only start session saving when an actual file was opened
-          module = "persistence",
-          config = function()
-            require("user.persistence").config()
-          end
-      },
-      { "moll/vim-bbye" },
-      {
-          "j-hui/fidget.nvim",
-          config = function()
-            require("user.fidget_spinner").config()
-          end,
-      },
-      {
-          "MattesGroeger/vim-bookmarks",
-          config = function()
-            require("user.bookmark").config()
-          end,
-      },
-      {
-          "ggandor/leap.nvim",
-          config = function()
-            require("leap").set_default_keymaps()
-          end,
-      },
-      {
-          "nvim-neorg/neorg",
-          requires = {
-              "nvim-lua/plenary.nvim",
-              "nvim-neorg/neorg-telescope",
-              "esquires/neorg-gtd-project-tags",
-              "max397574/neorg-contexts",
-              "max397574/neorg-kanban",
+    -- {
+    --   "rcarriga/nvim-dap-ui",
+    --   config = function()
+    --     require("user.dap-ui").config()
+    --   end
+    -- },
+    {
+      "rebelot/kanagawa.nvim",
+    },
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      -- config = function()
+      --   require("catppuccin").setup({
+      --       flavour = "mocha",
+      --       term_colors = false,
+      --   })
+      -- end
+    },
+    {
+      "karb94/neoscroll.nvim",
+      config = function()
+        require("user.neoscroll").config()
+      end,
+      event = "BufRead",
+    },
+    {
+      "ixru/nvim-markdown",
+      config = function()
+        vim.g.vim_markdown_marh = 1
+        vim.g.vim_markdown_frontmatter = 1
+        vim.g.vim_markdown_conceal = 2
+      end
+    },
+    {
+      "iamcco/markdown-preview.nvim",
+      build = "cd app && npm install",
+      ft = "markdown",
+      config = function()
+        vim.g.mkdp_auto_start = 1
+      end,
+    },
+    {
+      -- Plugin for quickly changing parenthesis, brackets and others
+      "tpope/vim-surround",
+      keys = { "c", "d", "y" }
+    },
+    {
+      "folke/todo-comments.nvim",
+      config = function()
+        require("user.todo-comments").config()
+      end
+    },
+    {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require("colorizer").setup({ "*" }, {
+          RGB = true,      -- #RGB hex codes
+          RRGGBB = true,   -- #RRGGBB hex codes
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          rgb_fn = true,   -- CSS rgb() and rgba() functions
+          hsl_fn = true,   -- CSS hsl() and hsla() functions
+          css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        })
+      end,
+    },
+    {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("user.zen").config()
+      end
+    },
+    {
+      "ghillb/cybu.nvim",
+      config = function()
+        require("user.cybu").config()
+      end
+    },
+    {
+      "AckslD/nvim-neoclip.lua",
+      config = function()
+        require("user.neoclip").config()
+      end,
+      keys = "<leader>y",
+      dependencies = neoclip_req,
+      enabled = lvim.custom.neoclip.active,
+    },
+    {
+      "folke/trouble.nvim",
+      com = "TroubleToggle",
+    },
+    {
+      "ethanholz/nvim-lastplace",
+      event = "BufRead",
+      config = function()
+        require("nvim-lastplace").setup({
+          lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+          lastplace_ignore_filetype = {
+            "gitcommit", "gitrebase", "svn", "hgcommit",
           },
-          run = ":Neorg sync-parsers",
-          after = "nvim-treesitter",
-          config = function()
-            require("user.neorg").config()
-          end,
+          lastplace_open_folds = true,
+        })
+      end,
+    },
+    {
+      "folke/persistence.nvim",
+      event = "BufReadPre", -- this will only start session saving when an actual file was opened
+      config = function()
+        require("user.persistence").config()
+      end
+    },
+    { "moll/vim-bbye" },
+    {
+      "j-hui/fidget.nvim",
+      config = function()
+        require("user.fidget_spinner").config()
+      end,
+    },
+    {
+      "MattesGroeger/vim-bookmarks",
+      config = function()
+        require("user.bookmark").config()
+      end,
+    },
+    {
+      "ggandor/leap.nvim",
+      config = function()
+        require("leap").set_default_keymaps()
+      end,
+    },
+    {
+      "nvim-neorg/neorg",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neorg/neorg-telescope",
+        "esquires/neorg-gtd-project-tags",
+        "max397574/neorg-contexts",
+        "max397574/neorg-kanban",
       },
-      {
-          "romgrk/nvim-treesitter-context",
-          config = function()
-            require("treesitter-context").setup {
-                enable = true,
-                throttle = true,
-                max_lines = 0,
-                patterns = {
-                    default = {
-                        'class',
-                        'function',
-                        'method',
-                    },
-                },
-            }
-          end
-      },
-      {
-          "nvim-treesitter/playground",
-          event = "BufRead",
-      },
-      {
-          "dense-analysis/neural",
-          config = function()
-            require('neural').setup({
-                open_ai = {
-                    api_key = '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'
-                }
-            })
-          end,
-          requires = {
-              'MunifTanjim/nui.nvim',
-              'ElPiloto/significant.nvim'
-          }
-      },
-      {
-          "quarto-dev/quarto-nvim",
-          requires = {
-              "jmbuhr/otter.nvim",
-              "neovim/nvim-lspconfig"
+      build = ":Neorg sync-parsers",
+      after = "nvim-treesitter",
+      config = function()
+        require("user.neorg").config()
+      end,
+    },
+    {
+      "romgrk/nvim-treesitter-context",
+      config = function()
+        require("treesitter-context").setup {
+          enable = true,
+          throttle = true,
+          max_lines = 0,
+          patterns = {
+            default = {
+              'class',
+              'function',
+              'method',
+            },
           },
-          config = function()
-            require 'quarto'.setup {
-                lspFeatures = {
-                    enabled = true,
-                    languages = { 'python' },
-                    diagnostics = {
-                        enabled = true,
-                        triggers = { "BufWrite" }
-                    },
-                    completion = {
-                        enabled = true,
-                    },
-                },
-            }
-          end,
+        }
+      end
+    },
+    {
+      "nvim-treesitter/playground",
+      event = "BufRead",
+    },
+    {
+      "quarto-dev/quarto-nvim",
+      dependencies = {
+        "jmbuhr/otter.nvim",
+        "neovim/nvim-lspconfig"
       },
+    },
   }
 end
 
