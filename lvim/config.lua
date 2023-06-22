@@ -22,15 +22,16 @@ lvim.builtin.project.patterns = {
   ".obsidian"
 }
 
-lvim.builtin.indentlines.options = {
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-  use_treesiter = true,
-  show_foldtext = true,
-}
+
+--lvim.builtin.indentlines.options = {
+--  show_trailing_blankline_indent = false,
+--  show_first_indent_level = false,
+--  space_char_blankline = " ",
+--  show_current_context = true,
+--  show_current_context_start = true,
+--  use_treesiter = true,
+--  show_foldtext = true,
+--}
 
 -- Windows Config
 if vim.fn.has('windows') then
@@ -43,27 +44,12 @@ if vim.fn.exists("g:neovide") then
   lvim.transparent_window = true
 end
 
--- Treesitter
-
-require 'nvim-treesitter.install'.compilers = { "clang" }
-lvim.builtin.treesitter.ensure_installed = {
-  "c",
-  "cpp",
-  "lua",
-  "python",
-  "markdown",
-  "yaml",
-  "norg",
-}
-lvim.builtin.treesitter.highlight.enabled = true
-lvim.builtin.treesitter.indent.enable = true
-lvim.builtin.treesitter.playground.enable = true
-
 -- LSP settings
 lvim.lsp.installer.setup.ensure_installed = {
   "jsonls",
   "marksman",
-  "clangd"
+  "clangd",
+  "lua_ls"
 }
 
 -- Telescope

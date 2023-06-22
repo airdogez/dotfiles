@@ -7,6 +7,14 @@ add_newline = true
 [package]
 disabled = true
 
+[os]
+style = "bold blue"
+disabled = false
+[os.symbols]
+Windows = " "
+Arch = " "
+Ubuntu = " "
+
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
 success_symbol = "[➜](bold green)"

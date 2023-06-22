@@ -120,58 +120,10 @@ M.config = function()
     },
     { "moll/vim-bbye" },
     {
-      "j-hui/fidget.nvim",
-      config = function()
-        require("user.fidget_spinner").config()
-      end,
-    },
-    {
       "MattesGroeger/vim-bookmarks",
       config = function()
         require("user.bookmark").config()
       end,
-    },
-    {
-      "ggandor/leap.nvim",
-      config = function()
-        require("leap").set_default_keymaps()
-      end,
-    },
-    {
-      "nvim-neorg/neorg",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-neorg/neorg-telescope",
-        "esquires/neorg-gtd-project-tags",
-        "max397574/neorg-contexts",
-        "max397574/neorg-kanban",
-      },
-      build = ":Neorg sync-parsers",
-      after = "nvim-treesitter",
-      config = function()
-        require("user.neorg").config()
-      end,
-    },
-    {
-      "romgrk/nvim-treesitter-context",
-      config = function()
-        require("treesitter-context").setup {
-          enable = true,
-          throttle = true,
-          max_lines = 0,
-          patterns = {
-            default = {
-              'class',
-              'function',
-              'method',
-            },
-          },
-        }
-      end
-    },
-    {
-      "nvim-treesitter/playground",
-      event = "BufRead",
     },
     {
       "quarto-dev/quarto-nvim",
