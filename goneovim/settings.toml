@@ -1,0 +1,6 @@
+[Editor]
+BorderlessWindow = true
+HideTitlebar = true
+
+Transparent = 0.8
+StartMaximizedWindow = true
